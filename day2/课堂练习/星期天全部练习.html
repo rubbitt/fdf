@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	$(function(){
+		// 选取页面中的第一个
+		$('div:first').css();
+		// 偶数
+		$('ul li:even').
+		//奇数
+		$('ul li:odd').
+		// 开始隔行变色
+		var rgb="";
+		$('ul li').mouseover(function(){
+			rgb=$(this).css('backgroundColor');
+			$(this).css();
+		})
+		$('ul li').mouseout(function(){
+			$(this).css('backgroundColor',rgb);
+		})
+	})
+</script>
+	<div>
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+	</div>
+	<nav>
+		<div>4</div>
+		<div>5</div>
+	</nav>
+	<p>q</p>
+	<p class='pp'>w</p>
+	<p>ra</p>
+	<p class='pp1'>qwrraa</p>
+	<p>qwrraa</p>
+
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+	</ul>
+	<ol>
+		<li>0</li>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+	</ol>
+
+
+<div>你好，小明</div>
+	<div>你 好，小明</div>
+	<div></div>
+	<div>
+		<p>11111</p>
+	</div>
+	<ul>
+		<li></li>
+		<li>123</li>
+		<li>
+			<div>456</div>
+		</li>
+		<li>
+			<p>789</p>
+		</li>
+		<li>sadf</li>
+		<li></li>
+		<li>sss</li>
+		<li></li>
+	</ul>
+	<script>
+		// 内容过滤选择器
+		$(function(){
+			// 内容中含有你好这个属性的
+			$('div:contains("你好")')
+			$('div:empty')
+			$('div:has(p)')
+			$('div:parent')
+		})
+
+
+
+		// 属性过滤选择器
+		$('div p[class]')
+		$('div p[id]')
+		
+	</script>
+</body>
+</html>

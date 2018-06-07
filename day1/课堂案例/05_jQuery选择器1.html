@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script src='js/jquery-1.11.3.min.js'></script>
+	<script>
+		$(function () {
+			//使用jquery设置元素样式
+			$(".test").css("color","red");
+			$("#li3").css({
+				"color":"blue",
+				"backgroundColor":"cyan",
+				"fontSize":"30px"
+			});
+			$("ul li.dv").css({
+				"color":"pink",
+				"backgroundColor":"red",
+			})
+		})
+
+	</script>
+	<div>
+		<ul>
+			<li class='dv'>1</li>
+			<li>2</li>
+			<li id='li3'>3</li>
+			<li class='dv'>4</li>
+			<li>5</li>
+		</ul>
+	</div>
+	<div class="test">123</div>
+	<div class="dv">q
+		<span>w
+			<span>
+				e
+					<span>r</span>
+			</span>
+		</span>
+	</div>
+	<span>asdf</span>
+	<div>asdfjnvdsvcnean,cne;k</div>
+</body>
+</html>

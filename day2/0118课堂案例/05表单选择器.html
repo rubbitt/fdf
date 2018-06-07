@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery-1.11.3.min.js"></script>
+
+	<script>
+		$(function () {
+			$(':input').css('background','red');
+
+			$('#f :enabled').css('background','blue');
+			$('form :disabled').css('background','gold');
+		})
+	</script>
+</head>
+<body>
+	<form action="" id="f">
+		<input type="text">
+		<input type="button">
+		<textarea name="" id="" cols="30" rows="10"></textarea>
+		<select name="" id="">
+			<option value="">北京</option>
+			<option value="">上海</option>
+			<option value="">长治</option>
+			<option value="">广州</option>
+		</select>
+
+		<input type="button" value="不可用" disabled>
+	</form>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery-1.11.3.min.js"></script>
+
+	<script>
+		$(function () {
+		//如果都有id或class 会覆盖 谁在下边会覆盖上边的
+			$('div p[class]').css('color','red');
+			$('div p[id]').css('color','blue');
+
+
+			$('div p[class="p3"]').css('color','gold');
+			$('div p[class!="p3"]').css('color','pink');
+			$('#box p[class^="h"]').css('color','purple');
+
+
+			$('#box p[class*="pp"]').css('color','skyblue');
+
+			$('div[id][class*=pp][title$=l]').css({
+				width:"100px",
+				height:"100px",
+				backgroundColor:'orange'
+			});
+		});
+	</script>
+</head>
+<body>
+	<div>
+		<p class="p1">1</p>
+		<p id="p1" class="p5">2</p>
+		<p class="p2">3</p>
+		<p class="p3" id="p6">4</p>
+	</div>
+	<div id="box">
+		<p class="pp1">p1</p>
+		<p class="h_pp1">pp1</p>
+		<p class="h_pp2">pp2</p>
+		<p class="p2">45</p>
+		<p class="hp4">p4</p>
+	</div>
+	<div id="app" class="pp5" title="lall"></div>
+	<!-- div#app.lalpp[title=lala] -->
+</body>
+</html>

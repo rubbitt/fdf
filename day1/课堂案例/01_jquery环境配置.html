@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- 直接引入 -->
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+	<!-- 第二种，下载jQuery库引入 -->
+	<script src='js/jquery-1.11.3.min.js'></script>
+	<style>
+	#box{
+		width: 100px;
+		height: 100px;
+		background-color:red;
+	}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<script>
+			window.onload=function(){
+				alert('123');
+			}
+			window.onload=function(){
+				alert('456');
+			}
+			$('#box').click=function(){
+				alert('789');
+			}
+			$(document).ready(function(){
+				alert(111);
+			});
+			$(document).ready(function(){
+				alert(222);
+			});
+			$(document).ready(function(){
+				
+			});
+			alert(333);//从上往下执行，当页面加载完毕以后触发
+		</script>
+	</div>
+</body>
+</html>

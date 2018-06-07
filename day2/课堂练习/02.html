@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<!-- 属性过滤选择器 -->
+	<script>
+		$(function(){
+			$('div p[class]').css('color','red');
+			$('div p[id]').css('color','blue');
+			$('div p[class="p3"]').css('color','gold');
+			$('div p[class!="p3"]').css('color','pink');
+			$('#box p[class^="h"]').css('color','purple');
+			$('#box p[class*="pp"]').css('color','skyblue');
+			$('div[id][class*=pp][title$=l]').css({
+				"width":"100px";
+				"height":"100px";
+				"backgroundColor":'orange';
+
+			})
+		})
+	</script>
+	<div>
+		<p class="p1">1</p>
+		<p id="p1" class="p5">2</p>
+		<p class="p2">3</p>
+		<p class="p3" id="p6">4</p>
+	</div>
+	<div id="box">
+		<p class="pp1">p1</p>
+		<p class="h_pp1">pp1</p>
+		<p class="h_pp2">pp2</p>
+		<p class="p2">45</p>
+		<p class="hp4">p4</p>
+	</div>
+	<div id="app" class="pp5" title="lall"></div>
+</body>
+</html>
+
+<!-- 开始子元素的过滤选择器 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		$(function(){
+			$('div p:nth-child(3)').css()
+			$('div p:er(2)').css()
+			$('div p:nth-child(2n)').css()
+			$('div p:nth-child(2n-1)').css();
+
+			// 选取每一个li的第一个儿子
+			$('li:first-child').css();
+			// 选取页面中的第一个儿子
+			$('li:first').css()
+			// 获取独生子
+			$('li:only-child').css();
+		})
+	</script>
+</head>
+<body>
+	<div>
+		<p class="pp1">1</p>
+		<p class="pp2">2</p>
+		<p class="pp3">3</p>
+		<p class="pp4">4</p>
+		<p class="pp5">5</p>
+	</div>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		
+	</ul>
+	<ul>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		
+	</ul>
+	<ul>
+		<li>10</li>
+	</ul>
+</body>
+</html>
+
+<!-- 表单选择器 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		$(function(){
+			// 这个是获取了所有的表单元素
+			$('input').css('backgroundColor','red');
+			$('#f :enabled').css();
+			$('form :disabled').css()
+
+		})
+	</script>
+</head>
+<body>
+	<form action="" id="f">
+		<input type="text">
+		<input type="button">
+		<textarea name="" id="" cols="30" rows="10"></textarea>
+		<select name="" id="">
+			<option value="">北京</option>
+			<option value="">上海</option>
+			<option value="">长治</option>
+			<option value="">广州</option>
+		</select>
+
+		<input type="button" value="不可用" disabled>
+	</form>
+</body>
+</html>

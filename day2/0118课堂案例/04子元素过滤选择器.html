@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery-1.11.3.min.js"></script>
+
+	<script>
+		$(function () {
+			$('div p:nth-child(3)').css('color','red');
+			$('div p:eq(2)').css('fontSize','32px');
+
+			$('div p:nth-child(2n)').css('color','blue');
+			$('div p:nth-child(2n-1)').css('color','cyan');
+
+
+			$('li:first-child').css('color','yellow');
+			$('li:first').css('fontSize','34px');
+
+			$('li:only-child').css('backgroundColor','red');
+		})
+	</script>
+</head>
+<body>
+	<div>
+		<p class="pp1">1</p>
+		<p class="pp2">2</p>
+		<p class="pp3">3</p>
+		<p class="pp4">4</p>
+		<p class="pp5">5</p>
+	</div>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		
+	</ul>
+	<ul>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		
+	</ul>
+	<ul>
+		<li>10</li>
+	</ul>
+</body>
+</html>

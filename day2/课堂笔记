@@ -1,0 +1,209 @@
+第一部分：选择器
+	1.过滤选择器
+		1)基本过滤选择器
+			:first  
+				选取第一个元素    单个元素
+				$("div:first"). 
+				$("ul li:first-child")	
+				选取每个 <ul> 元素的第一个 <li> 元素
+				 选取页面下的第一个div元素
+			:last	
+				选取最后一个元素
+				单个元素   $('div:last')
+				选取页面最后一个div
+			:not(selector) 			
+				多个元素是元素集合
+				选取非selector的所有元素
+				$('p:not(.pp)');   //选取类名不是pp的所有p标签  
+				男生:not(王丽欢)
+			:even  
+				选取索引为偶数的指定元素，注意索引从0开始
+				元素集合  $('p:even').  		
+				选取索引为偶数的所有p标签
+			:odd
+				选取索引为奇数的指定元素，注意索引从0开始
+				元素集合  $('p:even').  		
+				选取索引为奇数的所有p标签
+			:eq(index)
+				选取索引为index的元素 下标从0开始
+				$('p:eq(3)').		获取下标为3的p标签
+			:gt(index)
+				选取索引大于index的元素下标从0楷书元素集合
+				$('p:gt(4)').  		选取索引大于4的p标签
+			:lt(index)
+				选取索引小于index的元素下标从0开始集合
+				$('p:lt(4)').  		选取索引小于4的p标签
+		2)内容过滤选择器
+			根据标签中包含的内容过滤
+			:contains(text)
+				选取含有文本text的元素
+				元素集合
+				$('div:contains('你好')').
+				选取包含你好的div元素
+				元素=标签+内容
+			:empty
+				选取不包含子元素或者文本的元素 空
+				$('div:empty').
+				选取空的div
+			:has(selector)
+				选取包含制定子元元素的标签
+				元素集合
+				$('div:has(p)');
+				选取包含p标签的div标签
+			:parent
+				选取包含子元素或者文本的元素
+				只要有儿子的元素都可以被选中
+				元素集合
+				$('div:parent').
+		3)属性过滤选择器
+				根据属性过滤出我们想要的元素
+				1)[attr]
+							获取拥有此属性的元素
+							元素集合
+							$('div[id]').
+							获取拥有id属性的div元素
+				2)[attr=value]
+						选取指定属性，值为value的元素
+						元素集合
+						$('div[class=p3]')
+						选取class为p3的div元素
+				3)[attr!=value]
+						选取指定属性，不为value的元素
+						元素集合
+						$('div[class=p3]')
+						选取class不为p3的div元素
+				4)[attr^=value]
+						选取指定属性，为value开头的元素
+						元素集合
+						$('div[class^=p3]')
+						选取class为p3开头的div元素
+				5)[attr$=value]
+						选取指定属性，为value结束的元素
+						元素集合
+						$('div[class$=p3]')
+						选取class为p3结束的div元素
+				6)[attr*=value]
+						选取执行属性中含有value的元素
+						元素集合
+						$('div[class*=pp]').
+						选取class中饭包含pp的div元素
+					[attr1][attr2][attrN]
+						选择满足所有属性选择器的元素集合
+						$('div[id][class*=pp][title$l]').
+						选取拥有id属性，class包含pp,title结尾是l的div元素
+			子元素过滤选择器
+					  专一用于选择子元素
+					  :nth-child(index|even|odd)//2n 2n+1
+					  选取每个父元素下的第index个或者奇偶个的元素,index从1开始
+					  n从1开始
+					  获取的是元素集合
+					  $('div:nth-child(3)').
+					  $('div:nth-child(2n)').
+					  选取所有div是其父标签的第三个子标签的div
+				8):first-child
+					  选取每个父元素的第一个儿子元素集合
+					  $('li:first-child').
+					  获取每一个ul的第一个li元素 (如果有两个ul就会获取两个li)
+					  $('li:first')
+					  获取所有li的第一个li
+				9):last-child
+						 选取每个父元素的最后一个儿子元素集合
+						  $('li:last-child').
+						  获取每一个ul的最后一个li元素 (如果有两个ul就会获取两个li)
+						  $('li:last')
+						  获取所有li的最后一个li
+				10):only-child
+						如果某个元素是它父元素的唯一一个子元素，将会被选择(独生子)
+						元素集合
+						$('p:only-child').
+						在p标签的父类中选择唯一的p标签
+		表单选择器：
+			:input
+				匹配所有的input，textarea，select,button元素
+				元素集合
+				$(':input').
+			:text
+				匹配所有的单行文本框
+				元素集合
+				$(':text').
+			:password
+				匹配所有的密码框
+				元素集合
+				$(':password').
+			:radio
+				匹配所有的单选框
+				元素集合
+				$(':radio').
+			:checkbox
+				匹配所有的复选框
+				元素集合
+				$(':radio').
+			:submit
+				匹配所有的提交按钮
+				元素集合
+				$(':submit').
+			:image
+				匹配所有的图片
+				元素集合
+				$(':image').
+			:reset
+				匹配所有的重置按钮
+				元素集合
+				$(':reset').
+			:button
+				匹配所有的普通按钮
+				元素集合
+				$(':button').
+			:file
+				匹配所有的文件上传域
+				元素集合
+				$(':file').、
+		表单对象属性过滤选择器(form)
+			:enabled
+				匹配所有可用的表单元素
+				元素集合语法
+				$('form :enabled').
+			:disabled
+				匹配所有不可用的表单元素
+				元素集合语法
+				$('form :disabled').
+			:check
+				匹配所有选中的复选或者单选按钮
+				元素集合语法
+				$(':check').
+			:selected
+				匹配所有选中的select选项元素(option)
+				元素集合语法
+				$(':selected').
+2.jQuery常用事件
+	1，click
+			$('div').on('click',function(){
+				//事件处理程序
+			})
+			$('div').click(fucntion(){
+				//事件处理程序
+			});
+	2. hover
+			$('div').hover(function(){},function(){   })
+
+
+
+			
+
+
+
+
+
+
+
+				
+
+
+
+
+
+
+
+					  
+
+

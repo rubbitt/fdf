@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	#box{
+		width: 100px;
+		height: 100px;
+		background-color: red;
+	}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<script>
+		window.onload=function(){
+			alert(123);
+		}
+		$(document).ready(function(){
+			alert(111);
+		})
+	</script>
+	<script>
+		$('#box').click(function(){
+			alert(123)
+		});
+		jQuery('#box').mouseover(function(){
+			alert(456)
+		})
+	</script>
+	<!-- 如果遇到冲突 -->
+	<script>
+		function $(id){
+			return document.getElementById('')
+		}
+		$(document).ready(function(){
+
+		})
+		var jq=noConflict();
+		$.noConflict();//$禁用
+		$(function(){
+			alert(1);
+		})
+
+	</script>
+
+	<!-- 开始选择器的连接 -->
+	<script>
+		$(function(){
+			$(".test").css("color","red");
+			$("#li3").css({
+				"color":"blue",
+				"backgroundColor":"red",
+				"fontSize":"14px",
+			});
+			$('ul li.dv').css({
+				"color":'pink',
+				"textAlign":'center',
+			})
+		})
+	</script>
+	<div>
+		<ul>
+			<li class='dv'>1</li>
+			<li>2</li>
+			<li id='li3'>3</li>
+			<li class='dv'>4</li>
+			<li>5</li>
+		</ul>
+	</div>
+	<div class="test">123</div>
+	<div class="dv">q
+		<span>w
+			<span>
+				e
+					<span>r</span>
+			</span>
+		</span>
+	</div>
+	<span>asdf</span>
+	<div>asdfjnvdsvcnean,cne;k</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		$(function(){
+			// 第一个div选择器
+			$("div div:first").css('color','red');
+			// 最后一个选择器
+			$('nav div:last').css('color','blue');
+			// p标签中不是类名为pp的元素
+			$('p:not(.pp)').css
+			// 偶数的
+			$('ul li:even').css
+			// 奇数的
+			$('ul li:odd').css
+			// 开始隔行变色
+			var rgb='';
+			$('ul li').mouseover(function(){
+				rgb=$(this).css('backgroundColor')
+				$(this).css('backgroundColor','red');
+			});
+			$('ul li').mouseout(function(){
+				$(this).css('backgroundColor',rgb)
+			});
+			// 开始选择这个下标为5的
+			$('ol li:eq(5)').css('color','red');
+			$('ol li:gt(6)').css('color','green');
+			$('ol li:lt(4)').css('color','blue');
+		})
+
+		var rgb='';
+		$('ul li').mouseover(function(){
+			rgb=$(this).css('backgroundColor');
+			$(this).css('backgroundColor','red')
+		})
+		$('ul li').mouseout(function(){
+			$(this).css('backgroundColor',rgb);
+		})
+	</script>
+
+	<!-- 开始过滤选择器 -->
+	<script>
+		$(function(){
+			$('div:contains('你好')').css('color','red');
+			// 空的div
+			$('div:empty').css({
+				'width':'100px',
+				'height':'100px',
+				'background':'red'
+			})
+			$('div:has(p)').css('color','pink');
+			$('li:parent').css('backgroundColor','red')
+		})
+	</script>
+</body>
+</html>

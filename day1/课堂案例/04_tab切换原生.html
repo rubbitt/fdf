@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		ul ,li{
+			list-style: none;
+		}
+		.tabArea{
+			border:1px solid red;
+			width: 300px;
+			margin: 10px auto 0;
+			overflow: hidden;
+		}
+		#tabTitle{
+			width: 300px;
+		}
+		ul li{
+			background-color: green;
+			float: left;
+			width: 95px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			margin-right: 5px;
+		}
+		ul li.selected{
+			background: pink;
+		}
+		#tabContent{
+			clear: both;
+			float: left;
+		}
+		#tabContent span{
+			display: none;
+			width: 300px;
+			height: 200px;
+			background-color: red;
+		}
+		#tabContent span.show{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="tabArea">
+		<ul id="tabTitle">
+			<li class="selected">标题1</li>
+			<li>标题2</li>
+			<li>标题3</li>
+		</ul>
+		<div id="tabContent">
+			<span class="show">内容1</span>
+			<span>内容2</span>
+			<span>内容3</span>
+		</div>
+	</div>
+
+	</script> -->
+	<script src='js/jquery-1.11.3.min.js'></script>
+	<script>
+		$('#tabTitle li').click(function(){
+				var ind=$(this).index();//转化为jQuery对象获取下标
+				$(this).addClass('selected').siblings().removeClass('selected');
+					//eq查找  对应关系
+				$('#tabContent span').eq(ind).addClass('show').siblings().removeClass('show');
+
+		})
+	
+		
+	</script>
+</body>
+<ml>
